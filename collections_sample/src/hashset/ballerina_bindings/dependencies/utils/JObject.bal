@@ -1,0 +1,5 @@
+public type JObject abstract object {
+
+    handle jObj;
+};
+
