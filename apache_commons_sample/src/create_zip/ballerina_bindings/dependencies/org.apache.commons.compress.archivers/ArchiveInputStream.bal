@@ -7,14 +7,25 @@
 // E.g. $ ballerina bindgen org.apache.commons.compress.archivers.ArchiveInputStream
 
 // Java Abstract Class
+// Ballerina object mapping for the Java class `org.apache.commons.compress.archivers.ArchiveInputStream`.
 public type ArchiveInputStream object {
 
     *JObject;
-    
-    public ArchiveInputStreamT _tag0 = ArchiveInputStreamT;
-    
+
+    public ArchiveInputStreamT _ArchiveInputStream = ArchiveInputStreamT;
+    public InputStreamT _InputStream = InputStreamT;
+    public CloseableT _Closeable = CloseableT;
+    public AutoCloseableT _AutoCloseable = AutoCloseableT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
+    }
+
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
     }
 };
 

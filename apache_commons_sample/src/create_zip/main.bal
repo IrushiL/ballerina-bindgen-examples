@@ -14,19 +14,17 @@ public function main() {
 }
 
 public function createZip(string file1, string file2, string zipfile) returns error? {
-    File f1 = File2(file1);
-    File f2 = File2(file2);
+    File f1 = newFile2(file1);
+    File f2 = newFile2(file2);
 
-    FileOutputStream fout = check FileOutputStream5(zipfile);
-    OutputStream out = new (fout.jObj);
-    ArchiveOutputStream os = check ArchiveStreamFactory1().createArchiveOutputStream1("zip", out);
+    OutputStream fout = check newFileOutputStream5(zipfile);
+    ArchiveOutputStream os = check newArchiveStreamFactory2().createArchiveOutputStream1("zip", fout);
     OutputStream outputStream = new (os.jObj);
     string? fileName1 = f1.getName();
     if (fileName1 is string) {
-        _ = check os.putArchiveEntry(ZipArchiveEntry4(fileName1));
-        FileInputStream fileInput = check FileInputStream2(f1);
-        InputStream inputStream = new (fileInput.jObj);
-        _ = check IOUtils_copy2(inputStream, outputStream);
+        _ = check os.putArchiveEntry(newZipArchiveEntry4(fileName1));
+        InputStream fileInput = check newFileInputStream2(f1);
+        _ = check IOUtils_copy1(fileInput, outputStream);
         error? closeResult = os.closeArchiveEntry();
         if (closeResult is error) {
             io:println(closeResult.reason());
@@ -34,10 +32,9 @@ public function createZip(string file1, string file2, string zipfile) returns er
     }
     string? fileName2 = f2.getName();
     if (fileName2 is string) {
-        _ = check os.putArchiveEntry(ZipArchiveEntry4(fileName2));
-        FileInputStream fileInput = check FileInputStream2(f2);
-        InputStream inputStream = new (fileInput.jObj);
-        _ = check IOUtils_copy2(inputStream, outputStream);
+        _ = check os.putArchiveEntry(newZipArchiveEntry4(fileName2));
+        InputStream fileInput = check newFileInputStream2(f2);
+        _ = check IOUtils_copy1(fileInput, outputStream);
         error? closeResult = os.closeArchiveEntry();
         if (closeResult is error) {
             io:println(closeResult.reason());

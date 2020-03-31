@@ -7,14 +7,24 @@
 // E.g. $ ballerina bindgen org.apache.commons.compress.archivers.zip.ZipShort
 
 
+// Ballerina object mapping for the Java class `org.apache.commons.compress.archivers.zip.ZipShort`.
 public type ZipShort object {
 
     *JObject;
-    
-    public ZipShortT _tag0 = ZipShortT;
-    
+
+    public ZipShortT _ZipShort = ZipShortT;
+    public SerializableT _Serializable = SerializableT;
+    public CloneableT _Cloneable = CloneableT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
+    }
+
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
     }
 };
 

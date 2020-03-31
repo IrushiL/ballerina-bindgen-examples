@@ -7,12 +7,23 @@
 // E.g. $ ballerina bindgen java.util.SortedMap
 
 // Java Interface
+// Ballerina object mapping for the Java class `java.util.SortedMap`.
 public type SortedMap object {
 
     *JObject;
-    
+
+    public SortedMapT _SortedMap = SortedMapT;
+    public ObjectT _Object = ObjectT;
+    public MapT _Map = MapT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
+    }
+
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
     }
 };
 

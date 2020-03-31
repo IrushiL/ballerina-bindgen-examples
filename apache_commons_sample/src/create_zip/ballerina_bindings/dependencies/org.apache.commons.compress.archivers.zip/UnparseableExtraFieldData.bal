@@ -7,14 +7,23 @@
 // E.g. $ ballerina bindgen org.apache.commons.compress.archivers.zip.UnparseableExtraFieldData
 
 
+// Ballerina object mapping for the Java class `org.apache.commons.compress.archivers.zip.UnparseableExtraFieldData`.
 public type UnparseableExtraFieldData object {
 
     *JObject;
-    
-    public UnparseableExtraFieldDataT _tag0 = UnparseableExtraFieldDataT;
-    
+
+    public UnparseableExtraFieldDataT _UnparseableExtraFieldData = UnparseableExtraFieldDataT;
+    public ZipExtraFieldT _ZipExtraField = ZipExtraFieldT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
+    }
+
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
     }
 };
 

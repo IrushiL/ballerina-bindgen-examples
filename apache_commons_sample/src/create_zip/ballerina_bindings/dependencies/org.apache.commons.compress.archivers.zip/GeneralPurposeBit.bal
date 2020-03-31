@@ -7,14 +7,23 @@
 // E.g. $ ballerina bindgen org.apache.commons.compress.archivers.zip.GeneralPurposeBit
 
 
+// Ballerina object mapping for the Java class `org.apache.commons.compress.archivers.zip.GeneralPurposeBit`.
 public type GeneralPurposeBit object {
 
     *JObject;
-    
-    public GeneralPurposeBitT _tag0 = GeneralPurposeBitT;
-    
+
+    public GeneralPurposeBitT _GeneralPurposeBit = GeneralPurposeBitT;
+    public CloneableT _Cloneable = CloneableT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
+    }
+
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
     }
 };
 

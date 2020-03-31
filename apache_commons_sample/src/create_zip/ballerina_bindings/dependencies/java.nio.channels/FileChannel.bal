@@ -7,14 +7,33 @@
 // E.g. $ ballerina bindgen java.nio.channels.FileChannel
 
 // Java Abstract Class
+// Ballerina object mapping for the Java class `java.nio.channels.FileChannel`.
 public type FileChannel object {
 
     *JObject;
-    
-    public FileChannelT _tag0 = FileChannelT;
-    
+
+    public FileChannelT _FileChannel = FileChannelT;
+    public SeekableByteChannelT _SeekableByteChannel = SeekableByteChannelT;
+    public ReadableByteChannelT _ReadableByteChannel = ReadableByteChannelT;
+    public ByteChannelT _ByteChannel = ByteChannelT;
+    public GatheringByteChannelT _GatheringByteChannel = GatheringByteChannelT;
+    public InterruptibleChannelT _InterruptibleChannel = InterruptibleChannelT;
+    public ChannelT _Channel = ChannelT;
+    public CloseableT _Closeable = CloseableT;
+    public AutoCloseableT _AutoCloseable = AutoCloseableT;
+    public WritableByteChannelT _WritableByteChannel = WritableByteChannelT;
+    public AbstractInterruptibleChannelT _AbstractInterruptibleChannel = AbstractInterruptibleChannelT;
+    public ObjectT _Object = ObjectT;
+    public ScatteringByteChannelT _ScatteringByteChannel = ScatteringByteChannelT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
+    }
+
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
     }
 };
 

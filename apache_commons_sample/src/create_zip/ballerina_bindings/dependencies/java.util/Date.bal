@@ -7,14 +7,25 @@
 // E.g. $ ballerina bindgen java.util.Date
 
 
+// Ballerina object mapping for the Java class `java.util.Date`.
 public type Date object {
 
     *JObject;
-    
-    public DateT _tag0 = DateT;
-    
+
+    public DateT _Date = DateT;
+    public SerializableT _Serializable = SerializableT;
+    public ComparableT _Comparable = ComparableT;
+    public CloneableT _Cloneable = CloneableT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
+    }
+
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
     }
 };
 

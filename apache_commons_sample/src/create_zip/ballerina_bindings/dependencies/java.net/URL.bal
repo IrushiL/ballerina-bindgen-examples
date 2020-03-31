@@ -7,14 +7,23 @@
 // E.g. $ ballerina bindgen java.net.URL
 
 
+// Ballerina object mapping for the Java class `java.net.URL`.
 public type URL object {
 
     *JObject;
-    
-    public URLT _tag0 = URLT;
-    
+
+    public URLT _URL = URLT;
+    public SerializableT _Serializable = SerializableT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
+    }
+
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
     }
 };
 

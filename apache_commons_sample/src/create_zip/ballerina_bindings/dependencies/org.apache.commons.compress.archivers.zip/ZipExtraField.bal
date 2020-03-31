@@ -7,12 +7,22 @@
 // E.g. $ ballerina bindgen org.apache.commons.compress.archivers.zip.ZipExtraField
 
 // Java Interface
+// Ballerina object mapping for the Java class `org.apache.commons.compress.archivers.zip.ZipExtraField`.
 public type ZipExtraField object {
 
     *JObject;
-    
+
+    public ZipExtraFieldT _ZipExtraField = ZipExtraFieldT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
+    }
+
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
     }
 };
 

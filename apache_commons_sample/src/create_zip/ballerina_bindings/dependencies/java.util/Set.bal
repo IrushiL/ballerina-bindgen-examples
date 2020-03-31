@@ -7,12 +7,24 @@
 // E.g. $ ballerina bindgen java.util.Set
 
 // Java Interface
+// Ballerina object mapping for the Java class `java.util.Set`.
 public type Set object {
 
     *JObject;
-    
+
+    public SetT _Set = SetT;
+    public IterableT _Iterable = IterableT;
+    public CollectionT _Collection = CollectionT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
+    }
+
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
     }
 };
 

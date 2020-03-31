@@ -7,14 +7,24 @@
 // E.g. $ ballerina bindgen java.util.zip.ZipEntry
 
 
+// Ballerina object mapping for the Java class `java.util.zip.ZipEntry`.
 public type ZipEntry object {
 
     *JObject;
-    
-    public ZipEntryT _tag0 = ZipEntryT;
-    
+
+    public ZipEntryT _ZipEntry = ZipEntryT;
+    public ZipConstantsT _ZipConstants = ZipConstantsT;
+    public CloneableT _Cloneable = CloneableT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
+    }
+
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
     }
 };
 
