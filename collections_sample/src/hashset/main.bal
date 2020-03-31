@@ -1,17 +1,18 @@
 import ballerina/io;
-import ballerinax/java;
+import ballerina/java;
 
 # Prints `Hello World`.
 
 public function main() {
     io:println("Testing a Java Collection usecase!");
 
-    HashSet hs = HashSet4();
+    HashSet hs = newHashSet4();
     Set hashSet = new (hs.jObj);
-    Object obj1 = new (java:fromString("One"));
-    Object obj2 = new (java:fromString("Two"));
-    Object obj3 = new (java:fromString("Two"));
-    Object obj4 = new (java:fromString("Three"));
+    String obj1 = newString12("One");
+    String obj2 = newString12("Two");
+    String obj3 = newString12("Three");
+    String obj4 = newString12("One");
+
     _ = hashSet.add(obj1);
     _ = hashSet.add(obj2);
     _ = hashSet.add(obj3);
@@ -23,7 +24,7 @@ public function main() {
         io:println(i.next().jObj);
     }
 
-    HashSet hs2 = HashSet4();
+    HashSet hs2 = newHashSet4();
     Set hashSet2 = new (hs2.jObj);
     Object obj5 = new (java:fromString("Four"));
     Object obj6 = new (java:fromString("Five"));

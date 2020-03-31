@@ -5,7 +5,7 @@ import java.util.Iterator;
 public class CollectionsSample {
     public static void main(String args[]) {
 
-        Set<String> set = new HashSet();
+        Set<String> set = newHashSet();
         set.add("One");
         set.add("Two");
         set.add("Three");

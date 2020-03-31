@@ -7,12 +7,22 @@
 // E.g. $ ballerina bindgen java.util.Spliterator
 
 // Java Interface
+// Ballerina object mapping for the Java class `java.util.Spliterator`.
 public type Spliterator object {
 
     *JObject;
-    
+
+    public SpliteratorT _Spliterator = SpliteratorT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
+    }
+
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
     }
 };
 
