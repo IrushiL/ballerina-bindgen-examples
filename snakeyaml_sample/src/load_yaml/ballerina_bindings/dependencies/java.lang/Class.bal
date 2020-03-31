@@ -7,16 +7,27 @@
 // E.g. $ ballerina bindgen java.lang.Class
 
 
+// Ballerina object mapping for the Java class `java.lang.Class`.
 public type Class object {
 
     *JObject;
-    
-    public ClassT _tag0 = ClassT;
-    
+
+    public ClassT _Class = ClassT;
+    public SerializableT _Serializable = SerializableT;
+    public TypeT _Type = TypeT;
+    public AnnotatedElementT _AnnotatedElement = AnnotatedElementT;
+    public ObjectT _Object = ObjectT;
+    public GenericDeclarationT _GenericDeclaration = GenericDeclarationT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
     }
-};
 
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
+    }
+};
 
 

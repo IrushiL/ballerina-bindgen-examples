@@ -7,16 +7,23 @@
 // E.g. $ ballerina bindgen java.io.FileDescriptor
 
 
+// Ballerina object mapping for the Java class `java.io.FileDescriptor`.
 public type FileDescriptor object {
 
     *JObject;
-    
-    public FileDescriptorT _tag0 = FileDescriptorT;
-    
+
+    public FileDescriptorT _FileDescriptor = FileDescriptorT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
     }
-};
 
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
+    }
+};
 
 

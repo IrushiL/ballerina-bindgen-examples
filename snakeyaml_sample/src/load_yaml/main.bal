@@ -12,10 +12,9 @@ public function main() {
 }
 
 function readYaml(string yamlPath) returns error? {
-    Yaml yaml = Yaml5();
-    File file = File2(yamlPath);
-    FileInputStream fileInput = check FileInputStream2(file);
-    InputStream inputStream = new(fileInput.jObj);
-    Object mapObj = yaml.load2(inputStream);
-    io:println(mapObj.jObj);
+    Yaml yaml = newYaml5();
+    File file = newFile2(yamlPath);
+    InputStream inputStream = check newFileInputStream2(file);
+    Object mapObj = yaml.load1(inputStream);
+    io:println(mapObj);
 }

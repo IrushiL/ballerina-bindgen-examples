@@ -7,14 +7,23 @@
 // E.g. $ ballerina bindgen java.lang.Iterable
 
 // Java Interface
+// Ballerina object mapping for the Java class `java.lang.Iterable`.
 public type Iterable object {
 
     *JObject;
-    
+
+    public IterableT _Iterable = IterableT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
     }
-};
 
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
+    }
+};
 
 

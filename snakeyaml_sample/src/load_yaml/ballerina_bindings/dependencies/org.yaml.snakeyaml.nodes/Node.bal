@@ -7,16 +7,23 @@
 // E.g. $ ballerina bindgen org.yaml.snakeyaml.nodes.Node
 
 // Java Abstract Class
+// Ballerina object mapping for the Java class `org.yaml.snakeyaml.nodes.Node`.
 public type Node object {
 
     *JObject;
-    
-    public NodeT _tag0 = NodeT;
-    
+
+    public NodeT _Node = NodeT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
     }
-};
 
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
+    }
+};
 
 

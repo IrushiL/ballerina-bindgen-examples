@@ -7,16 +7,25 @@
 // E.g. $ ballerina bindgen java.net.URI
 
 
+// Ballerina object mapping for the Java class `java.net.URI`.
 public type URI object {
 
     *JObject;
-    
-    public URIT _tag0 = URIT;
-    
+
+    public URIT _URI = URIT;
+    public ComparableT _Comparable = ComparableT;
+    public SerializableT _Serializable = SerializableT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
     }
-};
 
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
+    }
+};
 
 

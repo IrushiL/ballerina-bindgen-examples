@@ -7,16 +7,23 @@
 // E.g. $ ballerina bindgen org.yaml.snakeyaml.constructor.BaseConstructor
 
 // Java Abstract Class
+// Ballerina object mapping for the Java class `org.yaml.snakeyaml.constructor.BaseConstructor`.
 public type BaseConstructor object {
 
     *JObject;
-    
-    public BaseConstructorT _tag0 = BaseConstructorT;
-    
+
+    public BaseConstructorT _BaseConstructor = BaseConstructorT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
     }
-};
 
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
+    }
+};
 
 

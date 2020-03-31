@@ -7,16 +7,23 @@
 // E.g. $ ballerina bindgen org.yaml.snakeyaml.resolver.Resolver
 
 
+// Ballerina object mapping for the Java class `org.yaml.snakeyaml.resolver.Resolver`.
 public type Resolver object {
 
     *JObject;
-    
-    public ResolverT _tag0 = ResolverT;
-    
+
+    public ResolverT _Resolver = ResolverT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
     }
-};
 
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
+    }
+};
 
 

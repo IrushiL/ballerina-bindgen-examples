@@ -7,14 +7,24 @@
 // E.g. $ ballerina bindgen java.util.Collection
 
 // Java Interface
+// Ballerina object mapping for the Java class `java.util.Collection`.
 public type Collection object {
 
     *JObject;
-    
+
+    public CollectionT _Collection = CollectionT;
+    public IterableT _Iterable = IterableT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
     }
-};
 
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
+    }
+};
 
 

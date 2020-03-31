@@ -7,16 +7,26 @@
 // E.g. $ ballerina bindgen org.yaml.snakeyaml.introspector.BeanAccess
 
 
+// Ballerina object mapping for the Java class `org.yaml.snakeyaml.introspector.BeanAccess`.
 public type BeanAccess object {
 
     *JObject;
-    
-    public BeanAccessT _tag0 = BeanAccessT;
-    
+
+    public BeanAccessT _BeanAccess = BeanAccessT;
+    public EnumT _Enum = EnumT;
+    public ComparableT _Comparable = ComparableT;
+    public SerializableT _Serializable = SerializableT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
     }
-};
 
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
+    }
+};
 
 

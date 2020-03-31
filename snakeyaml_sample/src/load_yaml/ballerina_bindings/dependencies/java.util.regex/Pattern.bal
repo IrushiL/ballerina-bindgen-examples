@@ -7,16 +7,24 @@
 // E.g. $ ballerina bindgen java.util.regex.Pattern
 
 
+// Ballerina object mapping for the Java class `java.util.regex.Pattern`.
 public type Pattern object {
 
     *JObject;
-    
-    public PatternT _tag0 = PatternT;
-    
+
+    public PatternT _Pattern = PatternT;
+    public SerializableT _Serializable = SerializableT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
     }
-};
 
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
+    }
+};
 
 

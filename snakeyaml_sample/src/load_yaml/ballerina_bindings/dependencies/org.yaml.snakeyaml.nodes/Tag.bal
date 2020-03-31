@@ -7,16 +7,24 @@
 // E.g. $ ballerina bindgen org.yaml.snakeyaml.nodes.Tag
 
 
+// Ballerina object mapping for the Java class `org.yaml.snakeyaml.nodes.Tag`.
 public type Tag object {
 
     *JObject;
-    
-    public TagT _tag0 = TagT;
-    
+
+    public TagT _Tag = TagT;
+    public ComparableT _Comparable = ComparableT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
     }
-};
 
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
+    }
+};
 
 

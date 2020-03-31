@@ -7,16 +7,26 @@
 // E.g. $ ballerina bindgen java.io.Reader
 
 // Java Abstract Class
+// Ballerina object mapping for the Java class `java.io.Reader`.
 public type Reader object {
 
     *JObject;
-    
-    public ReaderT _tag0 = ReaderT;
-    
+
+    public ReaderT _Reader = ReaderT;
+    public CloseableT _Closeable = CloseableT;
+    public AutoCloseableT _AutoCloseable = AutoCloseableT;
+    public ReadableT _Readable = ReadableT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
     }
-};
 
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
+    }
+};
 
 

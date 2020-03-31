@@ -7,16 +7,23 @@
 // E.g. $ ballerina bindgen org.yaml.snakeyaml.DumperOptions
 
 
+// Ballerina object mapping for the Java class `org.yaml.snakeyaml.DumperOptions`.
 public type DumperOptions object {
 
     *JObject;
-    
-    public DumperOptionsT _tag0 = DumperOptionsT;
-    
+
+    public DumperOptionsT _DumperOptions = DumperOptionsT;
+    public ObjectT _Object = ObjectT;
+
     public function __init(handle obj) {
+
         self.jObj = obj;
     }
-};
 
+    public function toString() returns string {
+
+        return jObjToString(self.jObj);
+    }
+};
 
 
