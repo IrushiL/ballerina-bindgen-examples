@@ -1,0 +1,15 @@
+[project]
+org-name= "irushi"
+version= "0.1.0"
+
+[dependencies]
+
+[platform]
+target = "java8"
+    [[platform.libraries]]
+    module = "read_pdf"
+    path = "./lib/pdfbox-1.8.10.jar"
+
+    [[platform.libraries]]
+    module = "read_pdf"
+    path = "./lib/fontbox-1.8.10.jar"
